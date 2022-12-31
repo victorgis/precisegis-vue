@@ -1,138 +1,144 @@
 <template>
-  <!-- ======= Contact Section ======= -->
-  <section id="contact">
-    <div class="container" data-aos="fade-up">
-      <div class="section-header">
-        <h2 class="heading">Contact Us</h2>
-        <p class="sub-heading">
-          Dear Visitor, you can contact our team with general questions about
-          our products & Services, or about the website, by using the form
-          below.
-        </p>
+  <div>
+    <!-- ======= Contact Section ======= -->
+    <section id="contact">
+      <div class="container" data-aos="fade-up">
+        <div class="section-header">
+          <h2 class="heading">Contact Us</h2>
+          <p class="sub-heading">
+            Dear Visitor, you can contact our team with general questions about
+            our products & Services, or about the website, by using the form
+            below.
+          </p>
+        </div>
+
+        <div class="row contact-info">
+          <div class="col-md-4">
+            <div class="contact-address">
+              <i class="bi bi-geo-alt"></i>
+              <h3>Address</h3>
+              <address>3 Green Springs Estate Rd, Uyo 520102, NG</address>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-phone">
+              <i class="bi bi-phone"></i>
+              <h3>Phone Number</h3>
+              <p><a href="tel:+2349077421323">+234 907 7421 323</a></p>
+            </div>
+          </div>
+
+          <div class="col-md-4">
+            <div class="contact-email">
+              <i class="bi bi-envelope"></i>
+              <h3>Email</h3>
+              <p>
+                <a href="mailto:precisegis@gmail.com" target="_blank"
+                  >precisegis@gmail.com</a
+                >
+              </p>
+            </div>
+          </div>
+        </div>
       </div>
 
-      <div class="row contact-info">
-        <div class="col-md-4">
-          <div class="contact-address">
-            <i class="bi bi-geo-alt"></i>
-            <h3>Address</h3>
-            <address>3 Green Springs Estate Rd, Uyo 520102, NG</address>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="contact-phone">
-            <i class="bi bi-phone"></i>
-            <h3>Phone Number</h3>
-            <p><a href="tel:+2349077421323">+234 907 7421 323</a></p>
-          </div>
-        </div>
-
-        <div class="col-md-4">
-          <div class="contact-email">
-            <i class="bi bi-envelope"></i>
-            <h3>Email</h3>
-            <p>
-              <a href="mailto:precisegis@gmail.com" target="_blank"
-                >precisegis@gmail.com</a
-              >
-            </p>
-          </div>
-        </div>
+      <div class="container mb-4">
+        <iframe
+          src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.84523769189667!2d7.964739065018844!3d4.979188674522308!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e1dac76d7501988!2sPrecise%20GIS%20LTD!5e0!3m2!1sen!2sng!4v1646264807537!5m2!1sen!2sng"
+          width="100%"
+          height="380"
+          frameborder="0"
+          style="border: 0"
+          allowfullscreen
+        ></iframe>
       </div>
-    </div>
 
-    <div class="container mb-4">
-      <iframe
-        src="https://www.google.com/maps/embed?pb=!1m14!1m8!1m3!1d496.84523769189667!2d7.964739065018844!3d4.979188674522308!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x1e1dac76d7501988!2sPrecise%20GIS%20LTD!5e0!3m2!1sen!2sng!4v1646264807537!5m2!1sen!2sng"
-        width="100%"
-        height="380"
-        frameborder="0"
-        style="border: 0"
-        allowfullscreen
-      ></iframe>
-    </div>
-
-    <div class="container" id="contactus">
-      <div class="form">
-        <form method="POST" action="send" class="php-email-form">
-          <div class="row">
-            <div class="form-group col-md-6">
+      <div class="container" id="contactus">
+        <div class="form">
+          <form method="POST" action="send" class="php-email-form" ref="form">
+            <div class="row">
+              <div class="form-group col-md-6">
+                <input
+                  v-model="user.name"
+                  type="text"
+                  name="name"
+                  class="form-control"
+                  id="name"
+                  placeholder="Your Name"
+                  required
+                />
+              </div>
+              <div class="form-group col-md-6 mt-3 mt-md-0">
+                <input
+                  v-model="user.email"
+                  type="email"
+                  class="form-control"
+                  name="email"
+                  id="email"
+                  placeholder="Your Email"
+                  required
+                />
+              </div>
+            </div>
+            <div class="form-group mt-3">
               <input
-                v-model="user.name"
+                v-model="user.subject"
                 type="text"
-                name="name"
                 class="form-control"
-                id="name"
-                placeholder="Your Name"
+                name="subject"
+                id="subject"
+                placeholder="Subject"
                 required
               />
             </div>
-            <div class="form-group col-md-6 mt-3 mt-md-0">
-              <input
-                v-model="user.email"
-                type="email"
+            <div class="form-group mt-3">
+              <textarea
+                v-model="user.message"
                 class="form-control"
-                name="email"
-                id="email"
-                placeholder="Your Email"
+                name="message"
+                rows="5"
+                placeholder="Message"
                 required
-              />
+              ></textarea>
             </div>
-          </div>
-          <div class="form-group mt-3">
-            <input
-              v-model="user.subject"
-              type="text"
-              class="form-control"
-              name="subject"
-              id="subject"
-              placeholder="Subject"
-              required
-            />
-          </div>
-          <div class="form-group mt-3">
-            <textarea
-              v-model="user.message"
-              class="form-control"
-              name="message"
-              rows="5"
-              placeholder="Message"
-              required
-            ></textarea>
-          </div>
 
-          <div class="my-3">
-            <div class="loading">Loading</div>
-            <div class="error-message"></div>
-            <div class="sent-message">
-              Your message has been sent. Thank you!
+            <div class="my-3">
+              <div class="loading">Loading</div>
+              <div class="error-message"></div>
+              <div class="sent-message">
+                Your message has been sent. Thank you!
+              </div>
             </div>
-          </div>
 
-          <div class="text-center">
-            <button type="submit" @click="sendEmail">
-              <!-- <span
-                v-if="loader"
-                class="spinner-border spinner-border-sm"
-                role="status"
-                aria-hidden="true"
-              ></span -->
-              >Send Message
-            </button>
-          </div>
-        </form>
+            <div class="text-center">
+              <button type="submit" @click="sendEmail">
+                <span
+                  v-if="loader"
+                  class="spinner-border spinner-border-sm"
+                  role="status"
+                  aria-hidden="true"
+                ></span>
+                Send Message
+              </button>
+            </div>
+          </form>
+        </div>
       </div>
-    </div>
-  </section>
-  <!-- End Contact Section -->
+      <div id="alertMe"></div>
+      <!-- <div id="alertMe">{{ htmlNotSent }}</div> -->
+    </section>
+
+    <!-- End Contact Section -->
+  </div>
 </template>
 
 <script>
 import axios from "axios";
-
 export default {
   name: "Contact",
+  components: {},
+
   data() {
     return {
       user: {
@@ -146,6 +152,32 @@ export default {
     };
   },
   methods: {
+    alertSuccess() {
+      const htmlSent = `
+        <div class="alert alert-success" role="alert">
+        <h4 class="alert-heading">Well done!</h4>
+        <p>Message Sent</p>
+        </div>
+        `;
+      const alertMe = document.getElementById("alertMe");
+      alertMe.innerHTML = htmlSent;
+      setInterval(() => {
+        window.location.reload();
+      }, 3000);
+    },
+    alertFailed() {
+      const htmlNotSent = `
+        <div class="alert alert-danger" role="alert">
+        <h4 class="alert-heading">Failed!</h4>
+        <p>Message Not Sent</p>
+        </div>
+        `;
+      const alertMe = document.getElementById("alertMe");
+      alertMe.innerHTML = htmlNotSent;
+      setInterval(() => {
+        window.location.reload();
+      }, 3000);
+    },
     async sendEmail(e) {
       e.preventDefault();
       this.loader = true;
@@ -157,15 +189,42 @@ export default {
           "https://growthhubonline.org/api/sendemail",
           this.user
         );
-
-        // console.log("This user" + this.user);
-        // alert("Sent");
         this.loader = false;
+        if (this.loader === false) {
+          this.alertSuccess();
+          // console.log("I am called");
+        }
       } catch (err) {
-        alert("Something Went Wrong");
+        this.alertFailed();
+        // alert("Something Went Wrong");
         this.loader = false;
       }
+
+      // const alertFailed = () => {
+      //   const alertMe = document.getElementById("alertMe");
+      //   alertMe.innerHTML = htmlNotSent;
+      // };
     },
+  },
+  watch: {
+    // alertSuccess(newValue) {
+    //   console.log("newValue" + newValue);
+    // },
+    // markers(newValue) {
+    //   console.log(newValue);
+    //   if (newValue) {
+    //     console.log(newValue);
+    //     this.loadMap();
+    //   }
+    // },
   },
 };
 </script>
+<style>
+#alertMe {
+  align-content: center;
+  width: 50%;
+  margin: 50px 300px;
+  text-align: center;
+}
+</style>
